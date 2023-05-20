@@ -1,0 +1,27 @@
+ul li {
+  margin: 5px;
+  color: #6B7280;	
+}
+ul:nth-child(2) li {
+    margin: 10px;
+}
+
+.placeholder-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.placeholder-text {
+  display: flex;
+  padding-left: 20px;
+}
+.placeholder-container span {
+  position: absolute;
+  left: 0;
+}
+
+
+.hide {
+  display: none;
+}
