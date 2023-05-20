@@ -33,7 +33,7 @@ function MyOrders() {
             </Link>
           ))
         ) : (
-          <Link to="/" >
+          <Link to="/">
             <p className="flex items-center font-light px-4 w-full h-14 my-4 bg-orange-300 rounded-2xl text-center border-b-2 border-black text-black transition-all ease-in hover:translate-y-1">
               Let's make our first order
               <ArrowLongRightIcon className="w-6 h-6 pl-2" />

@@ -56,16 +56,16 @@ function Home({ title}) {
                 )}
               </div>
               <img
-                className="object-cover h-full rounded-lg border-b-4 border-orange-300"
+                className="object-cover h-full max-h-fit rounded-lg border-b-4 border-orange-300"
                 src="https://images.unsplash.com/photo-1604668915999-03e1269f6af6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
-                alt=""
+                alt="promp img"
               />
             </div>
 
             <img
               className="md:w-2/4 object-cover h-full rounded-lg mt-9 md:m-0 border-b-4 border-orange-300"
               src="https://images.unsplash.com/photo-1527275393322-8ddae8bd5de9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80"
-              alt=""
+              alt="promp img"
             />
           </div>
         </motion.div>

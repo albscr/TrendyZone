@@ -1,10 +1,9 @@
 import React, { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
 import { ShoppingCartContext } from "../../Context";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import "./styles.css";
 import { useAuth } from "../auth";
 import { motion } from "framer-motion";
+import "./styles.css";
 
 function Navbar() {
   const context = useContext(ShoppingCartContext);
@@ -24,10 +23,7 @@ function Navbar() {
           <motion.NavLink
             to="/"
             className="flex items-center justify-start w-80 font-corben text-3xl text-gray-700"
-            // initial={{ opacity: 0, scale: 0.8 }}
-            // animate={{ opacity: 1, scale: 1 }}
-            // transition={{ duration: 1 }}
-            initial={{ y: "-100px", }}
+            initial={{ y: "-100px" }}
             animate={{ x: "0", y: "0" }}
             transition={{ duration: 1 }}
           >
@@ -35,10 +31,12 @@ function Navbar() {
           </motion.NavLink>
         </p>
 
-        <motion.div className="placeholder-container w-2/4"
-         initial={{ opacity: 0, scale: 0.8 }}
-         animate={{ opacity: 1, scale: 1 }}
-         transition={{ duration: 1, delay: 1 }}>
+        <motion.div
+          className="placeholder-container w-2/4"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+        >
           <span
             className={`placeholder-text text-gray-400 ${
               inputValue.length > 0 ? "hide" : ""
@@ -60,7 +58,7 @@ function Navbar() {
           {auth.user?.username && (
             <div className="user flex items-center">
               <p className="pr-5 text-purple-300 text-semibold">
-                Welcome! 
+                Welcome!
                 <span className=" text-gray-600"> {auth.user.username}</span>
               </p>
               <img

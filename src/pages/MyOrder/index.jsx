@@ -15,9 +15,10 @@ function MyOrder() {
   return (
     <Layout>
       <motion.section
-       initial={{ opacity: 0 }}
-       animate={{ opacity: 1 }}
-       transition={{ duration: 1 }}>
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="flex items-center mt-20 md:mt-0 relative justify-center text-4xl font-display text-gray-700">
           <h1>My Order</h1>
         </div>

@@ -2,9 +2,9 @@ import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ShoppingCartContext } from "../../Context";
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
-import "./styles.css";
 import { useAuth } from "../auth";
 import { motion } from "framer-motion";
+import "./styles.css";
 
 function NavbarSide() {
   const activeStyle =
@@ -31,12 +31,12 @@ function NavbarSide() {
 
   return (
     <div className="top-20 mt-4 fixed hidden md:flex ">
-
-      <motion.nav 
-      initial={{opacity: 0}}        
-      animate={{opacity: 1, }}
-      transition={{ duration: 1, delay: 1.5 }} 
-      className=" bg-white m-0 flex flex-col justify-between flex-wrap h-screen w-52 text-lg border-r border-solid border-gray-400">        
+      <motion.nav
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        className=" bg-white m-0 flex flex-col justify-between flex-wrap h-screen w-52 text-lg border-r border-solid border-gray-400"
+      >
         <ul className="flex flex-col flex-wrap h-2/4 p-5">
           <li className="">
             <NavItem
@@ -92,22 +92,36 @@ function NavbarSide() {
               Others
             </NavItem>
           </li>
-        </ul>        
+        </ul>
 
         <ul className="flex flex-col flex-wrap h-2/4 p-5">
           {auth.isLoggedIn ? (
             <div className="private">
               <li>
-                <NavItem to="/my-account" activeStyle={activeStyle} onClick={null}>My account</NavItem>
+                <NavItem
+                  to="/my-account"
+                  activeStyle={activeStyle}
+                  onClick={null}
+                >
+                  My account
+                </NavItem>
               </li>
               <li>
-                <NavItem to="/my-orders" activeStyle={activeStyle} onClick={null}>My orders</NavItem>
+                <NavItem
+                  to="/my-orders"
+                  activeStyle={activeStyle}
+                  onClick={null}
+                >
+                  My orders
+                </NavItem>
               </li>
             </div>
           ) : (
             <div className="public">
               <li>
-                <NavItem to="/sign-in" activeStyle={activeStyle} onClick={null}>Sign In</NavItem>
+                <NavItem to="/sign-in" activeStyle={activeStyle} onClick={null}>
+                  Sign In
+                </NavItem>
               </li>
             </div>
           )}

@@ -2,7 +2,11 @@ import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ShoppingCartContext } from "../../Context";
 import { useAuth } from "../auth";
-import { Bars2Icon, ShoppingBagIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars2Icon,
+  ShoppingBagIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 
 function MobileMenu() {
@@ -19,7 +23,7 @@ function MobileMenu() {
   const variants = {
     open: { opacity: 1, x: 0 },
     closed: { opacity: 0, x: "-100%" },
-  }
+  };
 
   return (
     <section className="fixed  top-0 z-10 bg-white w-full h-14 md:hidden">
@@ -33,32 +37,37 @@ function MobileMenu() {
             TrendyZone
           </NavLink>
         </p>
-        <button className="flex items-center"
-        onClick={() => context.openCheckoutSideMenu()}>
+        <button
+          className="flex items-center"
+          onClick={() => context.openCheckoutSideMenu()}
+        >
           <ShoppingBagIcon className="w-5 h-5" />
           {context.cartProducts.length}
         </button>
-        
-        <motion.button className="text-black " onClick={toggleMenu}
-         initial={{ opacity: 0}}
-         animate={{ opacity: 1}}
-         transition={{ duration: 1 }}>
-          {
-            !isOpen ? (
-              <Bars2Icon className="w-6 h-6" />
 
-            ) : (
-              <XMarkIcon className="w-6 h-6"/>
-            )
-          }
+        <motion.button
+          className="text-black "
+          onClick={toggleMenu}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          {!isOpen ? (
+            <Bars2Icon className="w-6 h-6" />
+          ) : (
+            <XMarkIcon className="w-6 h-6" />
+          )}
         </motion.button>
       </div>
 
-      <motion.div 
-       animate={isOpen ? "open" : "closed"}
-       variants={variants}
-      className={isOpen ? "fixed z-10 overflow-y-scroll top-4 pt-4" : "hidden"}>
-        <nav className=" bg-white h-screen w-screen text-lg mt-6 p-6 font-display">          
+      <motion.div
+        animate={isOpen ? "open" : "closed"}
+        variants={variants}
+        className={
+          isOpen ? "fixed z-10 overflow-y-scroll top-4 pt-4" : "hidden"
+        }
+      >
+        <nav className=" bg-white h-screen w-screen text-lg mt-6 p-6 font-display">
           <ul className="flex flex-col ">
             <li className="">
               <NavLink
@@ -132,8 +141,11 @@ function MobileMenu() {
             {auth.isLoggedIn ? (
               <div className="private mt-16 ">
                 <li className="mb-5">
-                  <NavLink to="/my-account" onClick={closeMenu}
-                  className="font-bold">
+                  <NavLink
+                    to="/my-account"
+                    onClick={closeMenu}
+                    className="font-bold"
+                  >
                     My account
                   </NavLink>
                 </li>
@@ -146,8 +158,11 @@ function MobileMenu() {
             ) : (
               <div className="public">
                 <li>
-                  <NavLink to="/sign-in" onClick={closeMenu}
-                  className="font-semibold">
+                  <NavLink
+                    to="/sign-in"
+                    onClick={closeMenu}
+                    className="font-semibold"
+                  >
                     Sign In
                   </NavLink>
                 </li>
